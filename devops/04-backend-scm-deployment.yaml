@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-scm
+  labels:
+    app: backend-scm
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: backend-scm
+  template:
+    metadata:
+      labels:
+        app: backend-scm
+    spec:
+      containers:
+      - name:  backend-scm
+        image: oliveiha/dockerproductionaws:backend-scm
+        ports:
+        - containerPort: 3030
+        env:
+        - name: NODE_ENV
+          value: "staging"        
+        - name: SECRET_OR_KEY
+          value: "dani1602"
+        - name: GITHUB_CLIENT_ID
+          value: "8ca7a26d7b621180b0fd"
+        - name: GITHUB_CLIENT_SECRET
+          value: "8331ead48866ec6e4832744883c790332b95ac81"      

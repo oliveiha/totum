@@ -1,0 +1,5 @@
+module.exports = {
+	  secretOrKey: "dani1602",
+	  clientId:  "8ca7a26d7b621180b0fd",
+	  clientSecret:  "8331ead48866ec6e4832744883c790332b95ac81"
+};

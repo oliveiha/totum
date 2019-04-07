@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-user
+  labels:
+    app: backend-user
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: backend-user
+  template:
+    metadata:
+      labels:
+        app: backend-user
+    spec:
+      containers:
+      - name:  frontend-container
+        image: oliveiha/dockerproductionaws:backend-user
+        ports:
+        - containerPort: 3020
+        env:
+        - name: NODE_ENV
+          value: "staging"
+          valueFrom:
+            configMapKeyRef:
+               name: guestcode
+               key: NODE_ENV         
+        - name: MONGO_URI
+          value: "mongodb://dbuser:rockti@ds247944.mlab.com:47944/rockti_code"
+        - name: SECRET_OR_KEY
+          value: "dani1602"      
