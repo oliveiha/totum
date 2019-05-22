@@ -21,10 +21,23 @@ spec:
         - containerPort: 3030
         env:
         - name: NODE_ENV
-          value: "staging"        
-        - name: SECRET_OR_KEY
-          value: "dani1602"
+          valueFrom: 
+            ConfigMapKeyRef:
+              name: questcode
+              key: NODE_ENV      
         - name: GITHUB_CLIENT_ID
-          value: "8ca7a26d7b621180b0fd"
+          valueFrom: 
+            ConfigMapKeyRef:
+              name: questcode
+              key: GITHUB_CLIENT_ID
         - name: GITHUB_CLIENT_SECRET
-          value: "8331ead48866ec6e4832744883c790332b95ac81"      
+          valueFrom: 
+            SecretKeyRef:
+              name: questcode
+              key: GITHUB_CLIENT_SECRET
+        - name: SECRET_OR_KEY
+          valueFrom: 
+            SecretKeyRef:
+              name: questcode
+              key: SECRET_OR_KEY     
+

@@ -15,7 +15,7 @@ spec:
         app: backend-user
     spec:
       containers:
-      - name:  frontend-container
+      - name:  backend-user-container
         image: oliveiha/dockerproductionaws:backend-user
         ports:
         - containerPort: 3020

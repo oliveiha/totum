@@ -10,8 +10,8 @@ const dev = {
 const staging = {
   NAME: "Staging Mode",
   // API_URL: "http://staging.questcode.org",
-  API_URL: "http://questcode.org:30020",
-  API_URL_SCM: "http://questcode.org:30030",
+  API_URL: "http://staging.rockti.com.br:30020",
+  API_URL_SCM: "http://staging.rockti.com.br:30030",
   s3: {
     BUCKET: "YOUR_DEV_S3_UPLOADS_BUCKET_NAME"
   }
@@ -19,7 +19,7 @@ const staging = {
 
 const prod = {
   NAME: "Production",
-  API_URL: "http://questcode.org",
+  API_URL: "http://rockti.com.br",
   s3: {
     BUCKET: "YOUR_PROD_S3_UPLOADS_BUCKET_NAME"
   }
