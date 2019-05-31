@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name:  frontend-container
-        image: oliveiha/dockerproductionaws:frontend:{{Values.image.tag}}
+        image: oliveiha/dockerproductionaws:frontend:{{ .Values.image.tag }}
         ports:
         - containerPort: {{ .Values.container.port }}
